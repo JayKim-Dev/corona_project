@@ -45,8 +45,6 @@ function PeopleStatistics() {
   const male = data.find((data) => data.gubun === '남성');
   const female = data.find((data) => data.gubun === '여성');
 
-  console.log(totalData);
-
   return (
     <>
       <CRow>
@@ -231,7 +229,7 @@ function PeopleStatistics() {
                       </span>
                     </div>
                     <div className='progress-group-bars'>
-                      <CProgress className='progress-sm' color='male' value='43' />
+                      <CProgress className='progress-sm' color='male' value={male ? male.confCaseRate : 0} />
                     </div>
                   </div>
                   <div className='progress-group mb-5'>
