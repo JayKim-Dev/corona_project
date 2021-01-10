@@ -2,16 +2,14 @@ import CIcon from '@coreui/icons-react';
 import { CCallout, CCard, CCardBody, CCardHeader, CCol, CProgress, CRow } from '@coreui/react';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import properties from '../../properties';
 
 function PeopleStatistics() {
   const [data, setData] = useState([]);
   const [totalData, setTotalData] = useState([]);
   useEffect(() => {
     axios
-      .get(
-        '/getCovid19GenAgeCaseInfJson?ServiceKey=MymrrXPoMcFDebHXSUQYDklXpKdbBfvt%2FulM%2BlnLRWec%2FecG7cOsDFhak264dyHXJ0JRth66RNR4W5P0afBreg%3D%3D',
-        {}
-      )
+      .get(`/getCovid19GenAgeCaseInfJson?ServiceKey=${properties.ServiceKey}`)
       .then((res) => {
         setData(res.data.response.body.items.item);
       })
@@ -20,10 +18,7 @@ function PeopleStatistics() {
       });
 
     axios
-      .get(
-        '/getCovid19InfStateJson?ServiceKey=MymrrXPoMcFDebHXSUQYDklXpKdbBfvt%2FulM%2BlnLRWec%2FecG7cOsDFhak264dyHXJ0JRth66RNR4W5P0afBreg%3D%3D',
-        {}
-      )
+      .get(`/getCovid19InfStateJson?ServiceKey=${properties.ServiceKey}`)
       .then((res) => {
         setTotalData(res.data.response.body.items.item);
       })
