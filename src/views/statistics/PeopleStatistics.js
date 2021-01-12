@@ -18,7 +18,9 @@ function PeopleStatistics() {
       });
 
     axios
-      .get(`/getCovid19InfStateJson?ServiceKey=${properties.ServiceKey}`)
+      .get(
+        `/getCovid19InfStateJson?ServiceKey=${properties.ServiceKey}&startCreateDt=${properties.startCreateDt}&endCreateDt=${properties.endCreateDt}`
+      )
       .then((res) => {
         setTotalData(res.data.response.body.items.item);
       })
@@ -40,6 +42,16 @@ function PeopleStatistics() {
   const male = data.find((data) => data.gubun === '남성');
   const female = data.find((data) => data.gubun === '여성');
 
+  let accExamCntPerday = 0;
+  let decideCntPerday = 0;
+  let deathCntPerday = 0;
+
+  if (totalData.length === 2) {
+    accExamCntPerday = (totalData[0].accExamCnt - totalData[1].accExamCnt).toLocaleString();
+    decideCntPerday = (totalData[0].decideCnt - totalData[1].decideCnt).toLocaleString();
+    deathCntPerday = (totalData[0].deathCnt - totalData[1].deathCnt).toLocaleString();
+  }
+
   return (
     <>
       <CRow>
@@ -55,8 +67,11 @@ function PeopleStatistics() {
                         <small className='text-muted'>누적 검사 수</small>
                         <br />
                         <strong className='h4'>
-                          {totalData.accExamCnt ? `${totalData.accExamCnt.toLocaleString()} 명` : 0}
+                          {totalData[0] ? `${totalData[0].accExamCnt.toLocaleString()} 명` : `0 명`}
                         </strong>
+                        <div>
+                          <small>전일 대비 (+ {accExamCntPerday} 명)</small>
+                        </div>
                       </CCallout>
                     </CCol>
                     <CCol sm='6'>
@@ -64,8 +79,11 @@ function PeopleStatistics() {
                         <small className='text-muted'>누적 확진자</small>
                         <br />
                         <strong className='h4'>
-                          {totalData.decideCnt ? `${totalData.decideCnt.toLocaleString()} 명` : 0}
+                          {totalData[0] ? `${totalData[0].decideCnt.toLocaleString()} 명` : `0 명`}
                         </strong>
+                        <div>
+                          <small>전일 대비 (+ {decideCntPerday} 명)</small>
+                        </div>
                       </CCallout>
                     </CCol>
                   </CRow>
@@ -196,9 +214,10 @@ function PeopleStatistics() {
                       <CCallout color='warning'>
                         <small className='text-muted'>누적 확진율</small>
                         <br />
-                        <strong className='h4'>
-                          {totalData.accDefRate ? `${totalData.accDefRate.toFixed(1)}%` : 0}
-                        </strong>
+                        <strong className='h4'>{totalData[0] ? `${totalData[0].accDefRate.toFixed(1)}%` : `0%`}</strong>
+                        <div>
+                          <small>&nbsp;</small>
+                        </div>
                       </CCallout>
                     </CCol>
                     <CCol sm='6'>
@@ -206,8 +225,11 @@ function PeopleStatistics() {
                         <small className='text-muted'>사망자</small>
                         <br />
                         <strong className='h4'>
-                          {totalData.deathCnt ? `${totalData.deathCnt.toLocaleString()} 명` : 0}
+                          {totalData[0] ? `${totalData[0].deathCnt.toLocaleString()} 명` : 0}
                         </strong>
+                        <div>
+                          <small>전일 대비 (+ {deathCntPerday} 명)</small>
+                        </div>
                       </CCallout>
                     </CCol>
                   </CRow>
