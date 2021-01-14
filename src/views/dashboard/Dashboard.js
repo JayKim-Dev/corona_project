@@ -1,11 +1,9 @@
-// import TotalStatistics from "../statistics/TotalStatistics";
-import PeopleStatistics from "../statistics/PeopleStatistics";
+import Statistics from '../statistics/Statistics';
 
 const Dashboard = () => {
   return (
     <>
-      {/* <TotalStatistics /> */}
-      <PeopleStatistics />
+      <Statistics />
     </>
   );
 };
