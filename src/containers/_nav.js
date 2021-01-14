@@ -8,9 +8,9 @@ const _nav = [
   },
   {
     _tag: 'CSidebarNavItem',
-    name: '대시보드',
+    name: '감염 통계',
     to: '/dashboard',
-    icon: <CIcon name='cil-speedometer' customClasses='c-sidebar-nav-icon' />,
+    icon: <CIcon name='cil-graph' customClasses='c-sidebar-nav-icon' />,
   },
   {
     _tag: 'CSidebarNavDivider',
