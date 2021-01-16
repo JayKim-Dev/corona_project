@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Dashboard = React.lazy(() => import('./views/dashboard/Dashboard'));
+const Statistics = React.lazy(() => import('./views/statistics/Statistics'));
 
 const routes = [
   { path: '/', exact: true, name: 'Home' },
-  { path: '/dashboard', name: 'Dashboard', component: Dashboard },
+  { path: '/statistics', name: 'Statistics', component: Statistics },
 ];
 
 export default routes;

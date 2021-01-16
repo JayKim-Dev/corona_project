@@ -8,7 +8,7 @@ function Statistics() {
       <CRow>
         <CCol>
           <CCard>
-            <CCardHeader>감염 통계</CCardHeader>
+            <CCardHeader>국내 발생 현황</CCardHeader>
             <CCardBody>
               <CRow>
                 <CCol xs='12' md='12' xl='12'>

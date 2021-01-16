@@ -4,12 +4,12 @@ import CIcon from '@coreui/icons-react';
 const _nav = [
   {
     _tag: 'CSidebarNavTitle',
-    _children: ['홈'],
+    _children: ['감염 통계'],
   },
   {
     _tag: 'CSidebarNavItem',
-    name: '감염 통계',
-    to: '/dashboard',
+    name: '국내 발생 현황',
+    to: '/statistics',
     icon: <CIcon name='cil-graph' customClasses='c-sidebar-nav-icon' />,
   },
   {
