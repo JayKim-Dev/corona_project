@@ -8,7 +8,7 @@ function TotalStatistics() {
   useEffect(() => {
     axios
       .get(
-        `/getCovid19InfStateJson?ServiceKey=${properties.ServiceKey}&startCreateDt=${properties.startCreateDt}&endCreateDt=${properties.endCreateDt}`
+        `/getCovid19InfStateJson?ServiceKey=${properties.ServiceKey}&startCreateDt=${properties.startDt}&endCreateDt=${properties.endCreateDt}`
       )
       .then((res) => {
         setTotalData(res.data.response.body.items.item);
@@ -23,7 +23,7 @@ function TotalStatistics() {
   let decideCntPerday = 0;
   let deathCntPerday = 0;
 
-  if (totalData.length === 2) {
+  if (totalData.length >= 2) {
     accExamCntPerday = (totalData[0].accExamCnt - totalData[1].accExamCnt).toLocaleString();
     decideCntPerday = (totalData[0].decideCnt - totalData[1].decideCnt).toLocaleString();
     deathCntPerday = (totalData[0].deathCnt - totalData[1].deathCnt).toLocaleString();
