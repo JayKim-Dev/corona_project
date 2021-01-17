@@ -4,6 +4,7 @@ import { logoNegative } from './logo-negative';
 
 import { cifUs, cifBr, cifIn, cifFr, cifEs, cifPl } from '@coreui/icons';
 import { cilGraph, cilUser, cilUserFemale } from '@coreui/icons';
+import { cibOpenstreetmap } from '@coreui/icons';
 
 export const icons = Object.assign(
   {},
@@ -24,5 +25,8 @@ export const icons = Object.assign(
     cifFr,
     cifEs,
     cifPl,
+  },
+  {
+    cibOpenstreetmap,
   }
 );

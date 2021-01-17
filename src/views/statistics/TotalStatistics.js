@@ -55,7 +55,7 @@ function TotalStatistics() {
         <CCallout color='warning'>
           <small className='text-muted'>누적 확진율</small>
           <br />
-          <strong className='h4'>{totalData[0] ? `${totalData[0].accDefRate.toFixed(1)}%` : `0%`}</strong>
+          <strong className='h4'>{totalData[0] ? `${parseFloat(totalData[0].accDefRate).toFixed(1)}%` : `0%`}</strong>
           <div>
             <small>&nbsp;</small>
           </div>
