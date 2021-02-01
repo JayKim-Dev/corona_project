@@ -1,7 +1,8 @@
 const dateFormat = (day) => {
-  const year = new Date().getFullYear();
-  const month = `0${new Date().getMonth() + 1}`.slice(-2);
-  const date = `0${new Date().getDate()}`.slice(-2) - day;
+  const now = new Date(new Date().setDate(new Date().getDate() - day));
+  const year = now.getFullYear();
+  const month = `0${now.getMonth() + 1}`.slice(-2);
+  const date = `0${now.getDate()}`.slice(-2);
   return `${year}${month}${date}`;
 };
 

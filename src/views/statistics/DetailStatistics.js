@@ -34,7 +34,7 @@ function DetailStatistics() {
   return (
     <>
       <CRow>
-        <CCol xs='12' md='6' xl='3'>
+        <CCol xs='12' md='6' xl='6'>
           <div className='progress-group mb-3'>
             <b>확진자 연령별 현황</b>
           </div>
@@ -149,7 +149,7 @@ function DetailStatistics() {
             </div>
           </CCol>
         </CCol>
-        <CCol xs='12' md='6' xl='3'>
+        <CCol xs='12' md='6' xl='6'>
           <div className='progress-group mb-3'>
             <b>확진자 성별 현황</b>
           </div>

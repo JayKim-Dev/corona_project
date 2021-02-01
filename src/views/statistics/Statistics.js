@@ -6,7 +6,7 @@ function Statistics() {
   return (
     <>
       <CRow>
-        <CCol>
+        <CCol xs='12' md='12' xl='6'>
           <CCard>
             <CCardHeader>국내 발생 현황</CCardHeader>
             <CCardBody>
