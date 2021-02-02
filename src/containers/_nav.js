@@ -12,12 +12,12 @@ const _nav = [
     to: '/statistics',
     icon: <CIcon name='cil-graph' customClasses='c-sidebar-nav-icon' />,
   },
-  {
-    _tag: 'CSidebarNavItem',
-    name: '시·도별 발생동황',
-    to: '/site',
-    icon: <CIcon name='cib-openstreetmap' customClasses='c-sidebar-nav-icon' />,
-  },
+  // {
+  //   _tag: 'CSidebarNavItem',
+  //   name: '시·도별 발생동향',
+  //   to: '/site',
+  //   icon: <CIcon name='cib-openstreetmap' customClasses='c-sidebar-nav-icon' />,
+  // },
   {
     _tag: 'CSidebarNavDivider',
     className: 'm-2',
