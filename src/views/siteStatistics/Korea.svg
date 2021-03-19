@@ -11,6 +11,9 @@
 				stroke-opacity: 1;
 				stroke-width:0.5;
 			}
+			.land:hover {
+				fill:#39f;
+			}
 		</style>
 
 		<amcharts:ammap projection="mercator" leftLongitude="125.384458" topLatitude="38.612296" rightLongitude="131.873029" bottomLatitude="33.194027"></amcharts:ammap>

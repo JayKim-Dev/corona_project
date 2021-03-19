@@ -1,6 +1,8 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { CHeader, CToggler, CHeaderBrand, CHeaderNav } from '@coreui/react';
+import {
+  CHeader, CToggler, CHeaderBrand, CHeaderNav,
+} from '@coreui/react';
 
 // routes config
 
@@ -20,13 +22,13 @@ const TheHeader = () => {
 
   return (
     <CHeader withSubheader>
-      <CToggler inHeader className='ml-md-3 d-lg-none' onClick={toggleSidebarMobile} />
-      <CToggler inHeader className='ml-3 d-md-down-none' onClick={toggleSidebar} />
-      <CHeaderBrand className='mx-auto d-lg-none' to='/'>
+      <CToggler inHeader className="ml-md-3 d-lg-none" onClick={toggleSidebarMobile} />
+      <CToggler inHeader className="ml-3 d-md-down-none" onClick={toggleSidebar} />
+      <CHeaderBrand className="mx-auto d-lg-none" to="/">
         {/* <CIcon name="logo" height="48" alt="Logo" /> */}
       </CHeaderBrand>
 
-      <CHeaderNav className='d-md-down-none mr-auto' />
+      <CHeaderNav className="d-md-down-none mr-auto" />
     </CHeader>
   );
 };

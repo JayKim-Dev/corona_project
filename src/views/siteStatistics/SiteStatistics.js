@@ -1,11 +1,14 @@
+import { CCard } from '@coreui/react';
 import React from 'react';
+import './map.css';
 import Korea from './Korea.svg';
 
 function SiteStatistics() {
   return (
     <>
-      <img src={Korea} alt='korea' />
-      안녕
+      <CCard>
+        <img src={Korea} className="map" alt="korea" />
+      </CCard>
     </>
   );
 }
