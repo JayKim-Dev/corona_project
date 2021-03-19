@@ -2,7 +2,6 @@ import { CCallout, CCol, CRow } from '@coreui/react';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import properties from '../../properties';
-import TotalForm from './Form/TotalForm';
 
 function TotalStatistics() {
   const [totalData, setTotalData] = useState([]);
