@@ -16,20 +16,21 @@ const TheContent = () => (
     <CContainer fluid>
       <Suspense fallback={loading}>
         <Switch>
-          {routes.map((route) => (
-            route.component && (
-              <Route
-                path={route.path}
-                exact={route.exact}
-                name={route.name}
-                render={(props) => (
-                  <CFade>
-                    <route.component {...props} />
-                  </CFade>
-                )}
-              />
-            )
-          ))}
+          {routes.map(
+            (route) => route.component && (
+            <Route
+              key={route.name}
+              path={route.path}
+              exact={route.exact}
+              name={route.name}
+              render={(props) => (
+                <CFade>
+                  <route.component {...props} />
+                </CFade>
+              )}
+            />
+            ),
+          )}
           <Redirect from="/" to="/statistics" />
         </Switch>
       </Suspense>

@@ -1,6 +1,3 @@
-import React from 'react';
-import CIcon from '@coreui/icons-react';
-
 const nav = [
   {
     _tag: 'CSidebarNavTitle',
@@ -10,13 +7,13 @@ const nav = [
     _tag: 'CSidebarNavItem',
     name: '국내 발생 현황',
     to: '/statistics',
-    icon: <CIcon name="cil-graph" customClasses="c-sidebar-nav-icon" />,
+    icon: 'cil-graph',
   },
   {
     _tag: 'CSidebarNavItem',
     name: '시·도별 발생동향',
     to: '/site',
-    icon: <CIcon name="cib-openstreetmap" customClasses="c-sidebar-nav-icon" />,
+    icon: 'cib-openstreetmap',
   },
   {
     _tag: 'CSidebarNavDivider',
