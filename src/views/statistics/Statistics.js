@@ -9,7 +9,7 @@ function Statistics() {
   return (
     <>
       <CRow>
-        <CCol xs="12" md="12" xl="6">
+        <CCol xs="12" md="12" xl="12">
           <CCard>
             <CCardHeader>국내 발생 현황</CCardHeader>
             <CCardBody>
